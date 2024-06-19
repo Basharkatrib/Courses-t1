@@ -1,0 +1,159 @@
+.modal-right2{
+    padding: 0 30px;
+    display: flex;
+    flex-direction: column;
+    flex-basis: 50%;
+    padding-bottom: 3px;
+    
+}
+
+.modal-right2 .modal-body2 p{
+    margin: 0;
+ 
+}
+.modal-right2 .modal-body2 button{
+    margin-bottom: 2px;
+}
+
+
+
+.modal-body2 form input {
+    width: 100%;
+    height: 30px;
+    padding: 10px;
+    margin: 3px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+
+.modal-body2 button {
+    width: 100%;
+    height: 30px;
+    padding: 10px;
+    margin: 3px 0;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    border-radius: 20px;
+    line-height: 0.5;
+}
+
+
+button.social-login {
+    width: calc(100% - 20px);
+
+}
+
+button.facebook {
+    background-color: #3b5998;
+    width: 100%;
+}
+
+button.apple {
+    background-color: #000;
+    width: 100%;
+}
+
+.social-login {
+    background-color: #ff1500;
+    width: calc(100% - 20px);
+    width: 100%;
+    height: 30px;
+    padding: 10px;
+    margin: 3px 0;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    border-radius: 20px;
+    line-height: 0.5;
+}
+
+.modal-body2 p {
+    text-align: center;
+}
+
+
+
+
+
+@media(max-width:600px){
+    .login-img {
+       display: none;
+    }
+    .modal-right2{
+        padding: 0 30px;
+        display: flex;
+        flex-direction: column;
+        flex-basis: 100%;
+        padding-bottom: 3px;
+        
+    }
+
+    .modal-content {
+        background-color: #fff;
+        display: flex;
+        flex-direction: row;
+        width: 70%;
+        height: 50%;
+        max-width: 900px;
+        border-radius: 10px;
+        overflow: hidden;
+        
+    }
+    .modal-body2 form input {
+        width: 100%;
+        height: 30px;
+        padding: 10px;
+        margin: 10px 0;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    .modal-body2 button {
+        width: 100%;
+        height: 30px;
+        padding: 10px;
+        margin: 3px 0;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        border-radius: 20px;
+        line-height: 0.5;
+    }
+
+    
+button.social-login {
+    width: calc(100% - 20px);
+
+}
+
+button.facebook {
+    background-color: #3b5998;
+    width: 100%;
+}
+
+button.apple {
+    background-color: #000;
+    width: 100%;
+}
+
+button.google {
+    background-color: #db4437;
+    width: 100%;
+}
+
+.modal-body2 p {
+    text-align: center;
+}
+
+    
+
+    
+
+}

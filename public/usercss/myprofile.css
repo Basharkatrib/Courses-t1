@@ -1,0 +1,178 @@
+.pro-all {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.pro-all .head {
+    padding: 30px 20px; /* Adjust padding for smaller screens */
+    text-align: center;
+    color: #0E5281;
+    font-size: 20px; /* Corrected typo from 20x to 20px */
+    flex-basis: 100%;
+}
+.dropdown{
+    display: none;
+}
+
+.pro-all .pro-section {
+    padding: 0 20px; /* Adjust padding for smaller screens */
+    flex-basis: 100%;
+    margin-top: 30px;
+}
+
+.pro-all .pro-section ul {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.pro-all .pro-section ul li {
+    list-style-type: none;
+    margin-left: 30px;
+}
+
+.pro-all .pro-section ul li a {
+    text-decoration: none;
+    color: black;
+}
+
+.pro-all .pro-img {
+    flex-basis: 100%;
+    padding: 0 20px; /* Adjust padding for smaller screens */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  
+}
+.pro-all .pro-img .main-image img{
+    border-radius: 50%;
+}
+
+.pro-all .pro-img .camera-icon {
+    position: absolute;
+    bottom: 0;
+    left: 70%;
+    transform: translateX(-50%);
+}
+
+.pro-all .pro-img .camera-icon a {
+    color: black;
+}
+
+.pro-all form {
+    padding: 30px 20px; /* Adjust padding for smaller screens */
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    justify-content: center;
+    position: relative;
+}
+
+.pro-all form input, select {
+    border: none;
+    outline: none;
+    width: 100%;
+}
+.pro-all form select {
+    width: 130px;
+}
+
+input[type="file"]{
+    margin-bottom: 12px;
+}
+
+
+.pro-all form label {
+    color: #1B1B1B;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.pro-all form hr {
+    margin-top: -5px;
+}
+
+.pro-all form button {
+    width: 91px;
+    height: 32px;
+    border-radius: 3px;
+    background-color: #1181A1;
+    border: 1px solid #1181A1;
+    color: white;
+    margin-top: auto; /* Push the button to the bottom */
+    align-self: center; /* Center the button horizontally */
+    margin-top: 30px;
+}
+
+
+@media(max-width:800px){
+
+    .pro-all .pro-section ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding-left: 0;
+        position: absolute;
+        left: 0;
+        
+        
+        
+    }
+    .pro-all .pro-section ul li{
+        padding-right: 30px;
+     
+   
+    }
+  
+
+    .pro-all .pro-img {
+        flex-basis: 100%;
+        padding: 0 20px; /* Adjust padding for smaller screens */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        margin-top: 100px;
+    }
+    .pro-all form {
+        padding: 0 0; /* Adjust padding for smaller screens */
+        display: flex;
+        flex-direction: column;
+     
+        justify-content: center;
+    
+        width: 100%;
+        left: 0;
+    }
+
+    .dropdown{
+        display: block;
+        position: absolute;
+        left: 20px;
+        top: 200px;
+    
+    }
+
+    .pro-all .pro-section{
+        display: none;
+    }
+
+    .pro-all form button {
+        width: 100%;
+        height: 32px;
+        border-radius: 3px;
+        background-color: #1181A1;
+        border: 1px solid #1181A1;
+        color: white;
+        margin-top: auto; /* Push the button to the bottom */
+        align-self: center; /* Center the button horizontally */
+        margin-top: 30px;
+    }
+      
+  
+
+}

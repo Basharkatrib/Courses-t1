@@ -1,0 +1,123 @@
+.all_videos_all .all-cards {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 30px;
+    margin: 40px 0px;
+    
+
+
+}
+
+.all_videos_all .all-cards .cards {
+    flex-basis: 25%;
+
+}
+.all_videos_all .all-cards .cards .image{
+    width: 300px;
+    height: 200px;
+    border-radius: 10px;
+    
+}
+
+.all_videos_all .head h3 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #0E5281;
+    text-align: center;
+}
+
+.all_videos_all .head p {
+    font-size: 16px;
+    color: #7B7B79;
+}
+
+.all_videos_all .cards h3 {
+    font-size: 16px;
+    margin-top: 6px;
+}
+
+.all_videos_all .cards .link {
+    position: relative;
+}
+
+.all_videos_all .cards .link a {
+    text-decoration: none;
+    position: absolute;
+    margin-top: 3px;
+    padding-left: 5px;
+
+}
+
+.all_videos_all .cards p {
+    padding-right: 15px;
+}
+
+.all_videos_all .cards .review {
+    display: flex;
+    margin-top: -20px;
+
+}
+
+.all_videos_all .cards .review p {
+    margin-left: -60px;
+}
+
+
+.all_videos_all .cards .price {
+    display: flex;
+    margin-top: -20px;
+}
+
+.all_videos_all .cards .price p {
+    margin-right: 10px;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.all_videos_all .cards .price del {
+    margin-top: 5px;
+}
+
+.rating {
+    width: 180px;
+}
+
+.rating__star {
+    cursor: pointer;
+    color: #dabd18b2;
+}
+
+
+
+
+@media(max-width:1250px) {
+
+
+    .all_videos_all .all-cards {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+
+    }
+
+    .all_videos_all .all-cards .cards {
+        flex-basis: 30%;
+        margin: 10px;
+
+    }
+
+}
+
+@media(max-width:710px) {
+    .all_videos_all .all-cards {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .all_videos_all .all-cards .cards {
+        flex-basis: 50%;
+        margin: 10px;
+    }
+
+}
