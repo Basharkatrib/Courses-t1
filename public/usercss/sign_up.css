@@ -11,8 +11,17 @@
     margin: 0;
  
 }
+.modal-right2 .modal-body2 .container{
+    position: relative;
+}
+.modal-right2 .modal-body2 .container img{
+    position: absolute;
+    top: 15%;
+    left: 14%;
+}
 .modal-right2 .modal-body2 button{
     margin-bottom: 2px;
+    color: white;
 }
 
 
@@ -39,13 +48,17 @@
     cursor: pointer;
     border-radius: 20px;
     line-height: 0.5;
+    position: relative;
+}
+.modal-body2 button img{
+    position: absolute;
+    top: 14%;
+    left: 14%;
+
 }
 
 
-button.social-login {
-    width: calc(100% - 20px);
 
-}
 
 button.facebook {
     background-color: #3b5998;
@@ -58,13 +71,13 @@ button.apple {
 }
 
 .social-login {
-    background-color: #ff1500;
+    background-color: #ffffff;
     width: calc(100% - 20px);
     width: 100%;
     height: 30px;
     padding: 10px;
     margin: 3px 0;
-    color: white;
+    color: rgb(0, 0, 0);
     border: none;
     border-radius: 5px;
     cursor: pointer;

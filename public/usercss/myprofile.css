@@ -27,6 +27,7 @@
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    
 }
 
 .pro-all .pro-section ul li {
@@ -50,6 +51,9 @@
 }
 .pro-all .pro-img .main-image img{
     border-radius: 50%;
+    width: 200px;
+    height: 200px;
+ 
 }
 
 .pro-all .pro-img .camera-icon {
@@ -67,7 +71,7 @@
     padding: 30px 20px; /* Adjust padding for smaller screens */
     display: flex;
     flex-direction: column;
-    width: 40%;
+    width: 70%;
     justify-content: center;
     position: relative;
 }
@@ -87,8 +91,8 @@ input[type="file"]{
 
 
 .pro-all form label {
-    color: #1B1B1B;
-    font-size: 14px;
+    color: #1181A1;
+    font-size: 20px;
     font-weight: 400;
 }
 
@@ -108,7 +112,19 @@ input[type="file"]{
     margin-top: 30px;
 }
 
+@media(max-width:1050px){
+    .pro-all form {
+        padding: 35px 0px; /* Adjust padding for smaller screens */
+        display: flex;
+        flex-direction: column;
+     
+        justify-content: center;
+    
+        width: 100%;
+        left: 0;
+    }
 
+}
 @media(max-width:800px){
 
     .pro-all .pro-section ul {
@@ -139,7 +155,7 @@ input[type="file"]{
         margin-top: 100px;
     }
     .pro-all form {
-        padding: 0 0; /* Adjust padding for smaller screens */
+        padding: 35px 10px; /* Adjust padding for smaller screens */
         display: flex;
         flex-direction: column;
      
@@ -152,8 +168,8 @@ input[type="file"]{
     .dropdown{
         display: block;
         position: absolute;
-        left: 20px;
-        top: 200px;
+        right: 14px;
+        top: 21px;
     
     }
 

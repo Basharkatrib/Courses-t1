@@ -5,11 +5,13 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\VideoController;
 use App\Http\Controllers\CommentController;
+use App\Http\Controllers\LayoutController;
 use App\Http\Controllers\SignUpController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\StripeController;
-
+use Laravel\Nova\Http\Controllers\DashboardController;
+use Laravel\Nova\Http\Requests\DashboardCardRequest;
 
 Route::get('/checkout', [StripeController::class, 'checkout'])->name('checkout');
 Route::post('/create-checkout-session', [StripeController::class, 'createCheckoutSession'])->name('create-checkout-session');
@@ -29,6 +31,7 @@ Route::get('/register', [SignUpController::class, 'showRegistrationForm'])->name
 Route::post('/register', [SignUpController::class, 'register']);
 
 Route::get('/', [CourseController::class, 'index'])->name('home');
+Route::get('/search', [CourseController::class, 'search'])->name('search');
 Route::get('auth/google', [GoogleController::class, 'redirectToGoogle'])->name('log');
 Route::get('auth/google/callback', [GoogleController::class, 'handleGoogleCallback']);
 
@@ -37,18 +40,19 @@ Route::get('auth/google/callback', [GoogleController::class, 'handleGoogleCallba
 Route::middleware(['auth'])->group(function () {
     Route::get('/courses/{course}', [CourseController::class, 'show'])->name('courses.show');
     Route::get('/videos/{video}', [VideoController::class, 'show'])->name('videos.show');
-    Route::post('/videos/{video}/comments', [CommentController::class, 'store'])->name('comments.store');
-  
+
+   
+    Route::post('/comments/{videoId}', [CommentController::class, 'store'])->name('comments.store');
+    Route::put('/comments/{comment}', [CommentController::class, 'update'])->name('comments.update');
+    Route::delete('/comments/{comment}', [CommentController::class, 'destroy'])->name('comments.destroy');
 });
 
 
 
-Route::get('/check',function(){
+Route::get('/check', function () {
     return view('User.checkout');
 });
 
-
-
-
-
-
+Route::get('/payment', function () {
+    return view('User.payment');
+});

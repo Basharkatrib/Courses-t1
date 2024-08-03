@@ -15,10 +15,10 @@
                     <img  class="image" src="{{ Storage::url($video->image) }}" alt="Course Image">
                 
                 </a>
-                <h3>VUE JS SCRATCH COURSE</h3>
+                <h3>{{$video->title}}</h3>
                 <div class="link">
                     <img src="{{ asset('images/person.svg') }}" alt="" srcset="">
-                    <a href="#">{{$video->title}}</a>
+                    <a href="#">{{$video->teacher}}</a>
                 </div>
                 <p>{{$video->description}}</p>
                 <div class="review">
@@ -31,10 +31,7 @@
                     </div>
                     <p>(1.2)K</p>
                 </div>
-                <div class="price">
-                    <p>$400 USD</p>
-                    <del>$600 USD</del>
-                </div>
+                
             </div>
             @endforeach
 

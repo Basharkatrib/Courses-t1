@@ -1,22 +1,33 @@
 /*first-section*/
+
 .first-section {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+  
+    
+   
 
 }
 
 iframe {
     border-radius: 20px;
     flex-basis: 55%;
+    
 }
 
 .right-section {
     flex-basis: 40%;
     padding-left: 20px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    
 
 
+}
+.right-section .videos ol hr{
+    width: 95%;
+    position: relative;
+    top: -8px;
 }
 
 .right-head {
@@ -35,6 +46,7 @@ iframe {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    margin-bottom: -25px;
 
 }
 
@@ -46,6 +58,7 @@ iframe {
 
 .right-section .videos .left p {
     margin: 10px;
+    color: black;
 
 }
 
@@ -67,7 +80,7 @@ iframe {
     align-items: center;
     justify-content: space-between;
     padding: 10px 0;
-    border-bottom: 1px solid #ccc;
+   
 }
 
 .videos .left {
@@ -99,6 +112,7 @@ iframe {
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
+    position: relative;
 }
 
 .second-section .left {
@@ -132,7 +146,7 @@ iframe {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, -0.8), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     position: relative;
 
 
@@ -205,7 +219,6 @@ iframe {
 .third .second-chat-all {
     display: flex;
     flex-direction: column;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     padding-top: 10px;
 }
 
@@ -223,7 +236,6 @@ iframe {
 
 .third .second-chat-all .message {
     display: flex;
-    flex-wrap: wrap;
     align-items: center;
     position: relative;
 }
@@ -260,9 +272,10 @@ iframe {
     position: relative;
 }
 
-input[type="text"]::placeholder {
+.third .second-chat-all form .search-container input[type="text"]::placeholder {
     color: rgb(151, 134, 134);
     opacity: 1;
+    background-color: #f4f4f4;
 }
 
 .third .second-chat-all form .search-container button {
@@ -277,14 +290,15 @@ input[type="text"]::placeholder {
     cursor: pointer;
 }
 
-.second-section .right {
+.second-section .right2 {
     flex-basis: 40%;
-
-
-
+    position: absolute;
+    top: 40px;
+    right: 0;
+    width: 495px;
 }
 
-.second-section .right .image-container {
+.second-section .right2 .image-container {
     display: flex;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     justify-content: space-between;
@@ -293,9 +307,12 @@ input[type="text"]::placeholder {
 
 
 
+
+
+
 }
 
-.second-section .right .image-container .left {
+.second-section .right2 .image-container .left {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -306,21 +323,21 @@ input[type="text"]::placeholder {
 
 }
 
-.second-section .right .image-container .left h4 {
+.second-section .right2 .image-container .left h4 {
     color: white;
     font-size: 32px;
     font-weight: 700;
 }
 
 
-.second-section .right .image-container .left p {
+.second-section .right2 .image-container .left p {
     color: #FFFFFF;
     font-size: 16px;
     font-weight: 400;
 }
 
-.second-section .right .image-container .left button {
-    width: 91px;
+.second-section .right2 .image-container .left button {
+    width: 92px;
     height: 32px;
     border-radius: 3px;
     background-color: rgb(29, 29, 110);
@@ -328,12 +345,67 @@ input[type="text"]::placeholder {
 }
 
 
-.second-section .right .image-container .left button a {
+.second-section .right2 .image-container .left button a {
     color: white;
     text-decoration: none;
 }
 
+.second-section .right2 .image-container .right {
+    background-color: rgb(198, 197, 197);
+}
 
+
+.delete{
+    position: relative;
+    background-color: rgb(29, 29, 110);
+    color: white;
+    border: none;
+    border-radius: 3px;
+    margin: 5px;
+    left: 87%;
+   
+   
+}
+
+.comment-content {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: pre-wrap;
+    position: relative;
+    line-break: anywhere;
+    padding-right: 120px;
+    
+}
+
+
+
+
+
+
+.accordion {
+    background-color: #fbfbfb;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
+  }
+  
+  .active, .accordion:hover {
+    background-color: #ededed; 
+  }
+  
+  .panel {
+    padding: 0 18px;
+    display: none;
+    background-color: #ededed;
+    
+    
+  }
 /*end-second-section*/
 
 /*start responsive*/
@@ -342,6 +414,16 @@ input[type="text"]::placeholder {
     .second-section .left {
         flex-basis: 50%;
         width: 55%;
+    }
+    .second-section .right2 {
+        flex-basis: 40%;
+        position: absolute;
+        top: 40px;
+        right: 0;
+        width: 367px;
+    }
+    .right2 .image-container .right img{
+        width: 220px;
     }
 }
 
@@ -354,10 +436,14 @@ input[type="text"]::placeholder {
 
     .second-section .right {
         flex-basis: 100%;
+
     }
 
     .second-section .right .image-container .right img {
         width: 100%;
+    }
+    .right2{
+        display: none;
     }
 }
 
@@ -371,13 +457,26 @@ input[type="text"]::placeholder {
 
     .right-section {
         flex-basis: 100%;
-        padding-left: 20px;
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-
+       
+        box-shadow: none;
+     
+        
+        width: 100%;
 
     }
 
     @media(max-width:500px) {
+        .content-all{
+            padding: 0px 0px;
+        }
+        iframe {
+            border-radius: 0px;
+            padding: 0;
+        }
+
+        .second-section .right2 {
+            display: none;
+        }
 
         .third .second-chat-all .desc .date {
             position: absolute;
@@ -387,7 +486,82 @@ input[type="text"]::placeholder {
             font-size: 11px;
 
         }
+        
+        .videos ol {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            max-height: none;
+            overflow-y: auto;
+        }
+        .comment-content {
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            white-space: pre-wrap;
+            max-width: 100%;
+        }
+        .comment-content{
+            position: relative;
+            line-break: anywhere;
+            padding-right: 15px;
+        }
+      
+        .second-section .left .first .first-right{
+            display: none;
+        }
+       
+        .second-section .left .second .right button {
+            top: 20%;
+        }
+        .second-section .left .first {
+            display: flex;
+          
+        }
+       
+        
+.second-section .left .second {
+    display: none;
+
+
+}
+        
+.accordion {
+    background-color: #fbfbfb;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
+  }
+  
+  .active, .accordion:hover {
+    background-color: #ededed; 
+  }
+  
+  .panel {
+    padding: 5px 18px;
+    display: none;
+    background-color: #ededed;
+    
+  }
+      
     }
+    .delete{
+        position: relative;
+        background-color: rgb(29, 29, 110);
+        color: white;
+        border: none;
+        border-radius: 3px;
+        margin: 5px;
+        left: 78%;
+       
+       
+    }
+    
 
 }
 

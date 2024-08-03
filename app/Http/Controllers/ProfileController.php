@@ -18,6 +18,7 @@ class ProfileController extends Controller
         if (Auth::check()) {
             $user = Auth::user();
             return view('User.profile', compact('user'));
+           
         }
         
         // Handle case where user is not logged in

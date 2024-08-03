@@ -11,7 +11,7 @@ class Video extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['course_id', 'title', 'description', 'url', 'image'];
+    protected $fillable = ['course_id', 'title','teacher', 'description', 'url', 'image'];
 
     public function course()
     {
@@ -21,5 +21,10 @@ class Video extends Model
     public function comments()
     {
         return $this->hasMany(Comment::class);
+    }
+    public function isPlaying()
+    {
+        // تأكد من أن لديك عمود is_playing في جدول الفيديوهات
+        return $this->is_playing;
     }
 }

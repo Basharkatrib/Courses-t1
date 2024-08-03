@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('course_id')->constrained()->onDelete('cascade');
             $table->string('title');
+            $table->string('teacher');
             $table->text('description')->nullable();
             $table->string('url');
             $table->text('image')->nullable();
@@ -27,6 +28,9 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('videos');
+        Schema::table('videos', function (Blueprint $table) {
+            $table->dropColumn('is_playing');
+        });
+        
     }
 };

@@ -3,13 +3,16 @@
     flex-wrap: wrap;
     margin-top: 30px;
     margin: 40px 0px;
+    justify-content: space-between;
     
 
 
 }
 
 .all_videos_all .all-cards .cards {
-    flex-basis: 25%;
+    flex-basis: 20%;
+    
+   
 
 }
 .all_videos_all .all-cards .cards .image{
@@ -43,7 +46,7 @@
 .all_videos_all .cards .link a {
     text-decoration: none;
     position: absolute;
-    margin-top: 3px;
+    margin-top: 1px;
     padding-left: 5px;
 
 }
@@ -75,7 +78,7 @@
 }
 
 .all_videos_all .cards .price del {
-    margin-top: 5px;
+    margin-top: 3px;
 }
 
 .rating {

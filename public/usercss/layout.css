@@ -4,8 +4,47 @@
 
 body {
     overflow-x: hidden;
-    font-family: Gilroy;
+    font-family: "Ubuntu", sans-serif;
     
+}
+.profile-container {
+    position: relative;
+    display: inline-block;
+}
+
+.main-image img {
+    cursor: pointer;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 2;
+    right: 0%;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+.profile-container .dropdown-content a{
+    padding-left: 0;
+}
+
+.show {
+    display: block;
 }
 .navbar-toggler{
     display: flex;
@@ -20,7 +59,7 @@ body {
 }
 
 .container-fluid {
-    padding: 5px 5%;
+    padding: 5px 3%;
     position: relative;
 }
 
@@ -224,7 +263,7 @@ input[type="search"]::placeholder {
 /*start footer*/
 footer {
     width: 100%;
-    padding: 20px 5%;
+    padding: 20px 3%;
     background-color: #0B1129;
     position: relative;
 }
@@ -233,7 +272,12 @@ footer {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     gap: 20px;
+   
 }
+.containe{
+    padding: 25px 50px;
+}
+
 
 .footer-1 {
     display: flex;
@@ -247,8 +291,10 @@ footer {
     margin-left: 10px;
 }
 
+
 .contain ul {
-    padding: 0;
+    padding-left: 80px;
+    
 }
 
 .contain ul li {
@@ -410,6 +456,7 @@ footer {
     footer .contain .footer-1{
         margin-left: 90px;
     }
+   
 
 }
 
@@ -420,6 +467,12 @@ footer {
         width: 100%;
         max-width: 400px;
         margin-right: 30px;
+    }
+    .contain ul {
+        padding-left: 0px;
+    }
+    footer .contain .footer-1 {
+        margin-left: 85px;
     }
     
 }
