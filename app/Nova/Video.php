@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Nova;
 
 use Laravel\Nova\Fields\ID;
@@ -31,7 +32,10 @@ class Video extends Resource
      * @var array
      */
     public static $search = [
-        'id', 'title', 'description', 'url'
+        'id',
+        'title',
+        'description',
+        'url'
     ];
 
     /**
@@ -50,23 +54,27 @@ class Video extends Resource
                 ->sortable()
                 ->rules('required'),
 
-            Text::make('Title','title')
+            Text::make('Title', 'title')
                 ->sortable()
                 ->rules('required', 'max:255'),
-                
-            Text::make('Teacher','teacher')
-            ->sortable()
-            ->rules('required', 'max:255'),
 
-            Textarea::make('Description','description')
+            Text::make('Teacher', 'teacher')
+                ->sortable()
+                ->rules('required', 'max:255'),
+
+            Textarea::make('Description', 'description')
                 ->rules('required'),
 
             Text::make('URL')
                 ->rules('required', 'url'),
-
-            Image::make('Image')
+            Image::make('Cover Image', 'image')
                 ->disk('public')
-                ->path('videos/images'),
+                ->path('images')
+                ->rules('required', 'image', 'max:2048')
+                ->thumbnail(function ($value) {
+                    return $this->image ? url('/storage/' . $value) : null;
+                })
+
         ];
     }
 }

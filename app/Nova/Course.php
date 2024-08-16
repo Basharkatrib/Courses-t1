@@ -43,22 +43,25 @@ class Course extends Resource
      * @param  \Illuminate\Http\Request  $request
      * @return array
      */
-   
-public function fields(Request $request)
-{
-    return [
-        ID::make(__('ID'), 'id')->sortable(),
-        Text::make('Title', 'title')->rules('required', 'max:255'),
-        Text::make('Instructor', 'instructer'),
-        Text::make('Old Price', 'old_price')->rules('required', 'max:255'),
-        Text::make('New Price', 'new_price')->rules('required', 'max:255'),
-        Textarea::make('Description', 'description')->rules(['required']),
-        Image::make('Cover Image', 'image')
-            ->disk('public') // Specify the storage disk
-            ->path('images/courses') // Specify the path where images will be stored
-            ->rules('required', 'image', 'max:2048') // Additional validation rules
-    ];
-}
+
+    public function fields(Request $request)
+    {
+        return [
+            ID::make(__('ID'), 'id')->sortable(),
+            Text::make('Title', 'title')->rules('required', 'max:255'),
+            Text::make('Instructor', 'instructer'),
+            Text::make('Old Price', 'old_price')->rules('required', 'max:255'),
+            Text::make('New Price', 'new_price')->rules('required', 'max:255'),
+            Textarea::make('Description', 'description')->rules(['required']),
+            Image::make('Cover Image', 'image')
+                ->disk('public')
+                ->path('images/courses')
+                ->rules('required', 'image', 'max:2048')
+                ->thumbnail(function ($value) {
+                    return $this->image ? url('/storage/' . $value) : null;
+                })
+        ];
+    }
 
     /**
      * Get the cards available for the request.
