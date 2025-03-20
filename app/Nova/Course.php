@@ -8,9 +8,9 @@ use Laravel\Nova\Http\Requests\NovaRequest;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Image;
 use Laravel\Nova\Fields\Textarea;
-use Laravel\Nova\Fields\BelongsTo;
-
-
+use App\Events\MyEvent; // استدعاء الحدث
+use Laravel\Nova\Resource;
+use Illuminate\Support\Facades\Log;
 
 class Course extends Resource
 {
@@ -26,7 +26,7 @@ class Course extends Resource
      *
      * @var string
      */
-    public static $title = 'id';
+    public static $title = 'title'; // تغيير لعرض عنوان الكورس
 
     /**
      * The columns that should be searched.
@@ -34,7 +34,7 @@ class Course extends Resource
      * @var array
      */
     public static $search = [
-        'id',
+        'id', 'title',
     ];
 
     /**
@@ -43,7 +43,6 @@ class Course extends Resource
      * @param  \Illuminate\Http\Request  $request
      * @return array
      */
-
     public function fields(Request $request)
     {
         return [
@@ -59,9 +58,24 @@ class Course extends Resource
                 ->rules('required', 'image', 'max:2048')
                 ->thumbnail(function ($value) {
                     return $this->image ? url('/storage/' . $value) : null;
-                })
+                }),
         ];
     }
+
+    /**
+     * Trigger event after a new course is created.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Models\Course  $model
+     * @return void
+     */
+    
+// public static function afterCreate($request, $model)
+// {
+//     Log::info('afterCreate triggered for course: ' . $model->title);
+
+//     event(new MyEvent($model->title));
+// }
 
     /**
      * Get the cards available for the request.

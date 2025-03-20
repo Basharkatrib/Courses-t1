@@ -6,8 +6,8 @@
     <!--start slider -->
     <div class="swiper mySwiper">
         <div class="swiper-wrapper">
-            <div class="swiper-slide"><img src="{{ asset('images/Hero.jpg') }}" alt="" srcset=""></div>
-            <div class="swiper-slide"><img src="{{ asset('images/R.png') }}" alt="" srcset=""></div>
+            <div class="swiper-slide"><img src="{{ asset('images/OIP.jpeg') }}" alt="" srcset=""></div>
+            <div class="swiper-slide"><img src="{{ asset('images/OIP2.jpeg') }}" alt="" srcset=""></div>
         </div>
         <div class="swiper-button-next"></div>
         <div class="swiper-button-prev"></div>
@@ -118,28 +118,28 @@
             <div class="cards">
                 <img src="{{ asset('images/inst.jpg') }}" alt="" srcset="" width="100%" height="400">
                 <div class="desc">
-                    <h3>Bashat katrib</h3>
+                    <h3>SON JON</h3>
                     <p>Marketing</p>
                 </div>
             </div>
             <div class="cards">
-                <img src="{{ asset('images/inst.jpg') }}" alt="" srcset="" width="100%" height="400">
+                <img src="{{ asset('images/per1.jpeg') }}" alt="" srcset="" width="100%" height="400">
                 <div class="desc">
-                    <h3>Bashat katrib</h3>
+                    <h3>DON FON</h3>
                     <p>Marketing</p>
                 </div>
             </div>
             <div class="cards">
-                <img src="{{ asset('images/inst.jpg') }}" alt="" srcset="" width="100%" height="400">
+                <img src="{{ asset('images/per4.jpg') }}" alt="" srcset="" width="100%" height="400">
                 <div class="desc">
-                    <h3>Bashat katrib</h3>
+                    <h3>JOHN YAHN</h3>
                     <p>Marketing</p>
                 </div>
             </div>
             <div class="cards">
-                <img src="{{ asset('images/inst.jpg') }}" alt="" srcset="" width="100%" height="400">
+                <img src="{{ asset('images/per3.jpeg') }}" alt="" srcset="" width="100%" height="400">
                 <div class="desc">
-                    <h3>Bashat katrib</h3>
+                    <h3>LAN RAI</h3>
                     <p>Marketing</p>
                 </div>
             </div>

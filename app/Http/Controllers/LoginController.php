@@ -29,7 +29,8 @@ class LoginController extends Controller
             abort(404); 
         }
 
-        return redirect()->intended('/'); 
+        
+        return redirect()->intended('/')->with('success', 'you are logged in sucssesfully');
     }
 
     public function logout(Request $request)

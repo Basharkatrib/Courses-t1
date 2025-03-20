@@ -60,3 +60,6 @@ Route::get('/payment', function () {
     return view('User.payment');
 });
 
+require __DIR__.'/auth.php'; 
+
+

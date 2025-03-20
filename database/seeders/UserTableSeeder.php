@@ -13,15 +13,14 @@ class UserTableSeeder extends Seeder
     public function run(): void
     {
         FacadesDB::table('users')->insert([
-            //Admin
+            
             [
                 'name' => 'admin',
                 'email' => 'Admin@gmail.com',
                 'password' => Hash::make('admin123'),
                 'role' => 'admin'
             ],
-      
-
+    
         ]);
     }
 }

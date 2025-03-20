@@ -1,3 +1,31 @@
+// window.Echo.channel('notifications')
+//     .listen('Illuminate\\Notifications\\Events\\BroadcastNotificationCreated', (event) => {
+//         console.log(`New course added: ${event.course_name}`);
+//         // إظهار الإشعار لبضع ثوانٍ
+//         showTemporaryNotification(`New Course: ${event.course_name}`);
+//     });
+
+// function showTemporaryNotification(message) {
+//     const notification = document.createElement('div');
+//     notification.textContent = message;
+//     notification.style.position = 'fixed';
+//     notification.style.top = '20px';
+//     notification.style.right = '20px';
+//     notification.style.backgroundColor = '#4caf50';
+//     notification.style.color = '#fff';
+//     notification.style.padding = '10px 20px';
+//     notification.style.borderRadius = '5px';
+//     notification.style.boxShadow = '0 2px 5px rgba(0, 0, 0, 0.3)';
+//     document.body.appendChild(notification);
+
+//     setTimeout(() => {
+//         notification.remove();
+//     }, 5000); // الإشعار يظهر لمدة 5 ثوانٍ
+// }
+
+
+
+
 var swiper = new Swiper(".mySwiper", {
     cssMode: true,
     navigation: {

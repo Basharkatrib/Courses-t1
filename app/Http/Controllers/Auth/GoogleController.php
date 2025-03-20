@@ -22,14 +22,14 @@ class GoogleController extends Controller
     public function handleGoogleCallback() 
     { 
         try { 
-            $user = Socialite::driver('google')->stateless()->user(); // استخدام stateless إذا كنت تواجه مشاكل في الجلسات
+            $user = Socialite::driver('google')->stateless()->user(); 
             Log::info('User from Google', ['user' => $user]); 
             $finduser = User::where('email', $user->email)->first(); 
             Log::info('Found User', ['user' => $finduser]); 
             
             if ($finduser) { 
                 Auth::login($finduser); 
-                Session::regenerate(); // أعد توليد جلسة جديدة
+                Session::regenerate(); 
                 Log::info('User logged in', ['user' => $finduser]); 
                 return redirect()->intended('/'); 
             } else { 
@@ -40,7 +40,7 @@ class GoogleController extends Controller
                     'password' => bcrypt('my-google') 
                 ]); 
                 Auth::login($newUser); 
-                Session::regenerate(); // أعد توليد جلسة جديدة
+                Session::regenerate(); 
                 Log::info('New User created and logged in', ['user' => $newUser]); 
                 return redirect()->intended('/'); 
             } 

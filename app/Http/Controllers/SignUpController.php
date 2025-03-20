@@ -31,7 +31,7 @@ class SignUpController extends Controller
             return redirect()->back()->withErrors($validator)->withInput();
         }
     
-        
+
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,

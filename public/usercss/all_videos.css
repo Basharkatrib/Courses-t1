@@ -4,22 +4,16 @@
     margin-top: 30px;
     margin: 40px 0px;
     justify-content: space-between;
-    
-
-
 }
 
 .all_videos_all .all-cards .cards {
     flex-basis: 20%;
-    
-   
-
 }
+
 .all_videos_all .all-cards .cards .image{
     width: 300px;
     height: 200px;
-    border-radius: 10px;
-    
+    border-radius: 10px; 
 }
 
 .all_videos_all .head h3 {
@@ -48,7 +42,6 @@
     position: absolute;
     margin-top: 1px;
     padding-left: 5px;
-
 }
 
 .all_videos_all .cards p {
@@ -58,7 +51,6 @@
 .all_videos_all .cards .review {
     display: flex;
     margin-top: -20px;
-
 }
 
 .all_videos_all .cards .review p {

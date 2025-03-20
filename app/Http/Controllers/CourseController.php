@@ -21,11 +21,12 @@ class CourseController extends Controller
         $course = Course::with('videos')->findOrFail($id);
         return view('User.all_videos', compact('course'));
     }
+
+    
     public function search(Request $request)
     {
         $query = $request->input('query');
         $courses = Course::where('title', 'LIKE', "%{$query}%")->get();
-
         return response()->json($courses);
     }
 }

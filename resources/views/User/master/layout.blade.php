@@ -15,8 +15,10 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('usercss/layout.css') }}">
     <link rel="stylesheet" href="{{ asset('usercss/home.css') }}">
     <link rel="stylesheet" href="{{ asset('usercss/showvideo.css') }}">
@@ -29,6 +31,22 @@
 
 
     <title>Courses</title>
+
+    <script src="https://js.pusher.com/8.2.0/pusher.min.js"></script>
+    <script>
+  
+      // Enable pusher logging - don't include this in production
+      Pusher.logToConsole = true;
+  
+      var pusher = new Pusher('8c63ad46ec10d64c6a31', {
+        cluster: 'eu'
+      });
+  
+      var channel = pusher.subscribe('courses');
+      channel.bind('course-added', function(data) {
+        alert(JSON.stringify(data));
+      });
+    </script>
 </head>
 
 <body>
@@ -44,10 +62,10 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <a href="/" style="text-decoration: none">
-                <div class="nav-left">
-                    <img src="{{ asset('images/image 8.svg') }}" alt="" srcset="">
-                    <div class="nav-desc">AraTech Course</div>
-                </div>
+                    <div class="nav-left">
+                        <img src="{{ asset('images/image 8.svg') }}" alt="" srcset="">
+                        <div class="nav-desc">AraTech Course</div>
+                    </div>
                 </a>
                 <div class="nav-center">
                     <form action="#" method="GET" onsubmit="return false;">
@@ -84,13 +102,19 @@
                                         </ul>
                                     </div>
                                 @endif
-                                <button class="btn social-login facebook"> <img src="{{asset('images/Facebook.png')}}" alt="" srcset="">   Continue with Facebook</button>
-                                <button class="btn social-login apple"><img src="{{asset('images/Apple.png')}}" alt="" srcset="">   Continue with Apple</button>
-                                <p class="container"><img src="{{asset('images/Google.png')}}" alt=""> <a href="{{ url('auth/google') }}" class="btn social-login google">Continue with
+                                <button class="btn social-login facebook"> <img
+                                        src="{{ asset('images/Facebook.png') }}" alt="" srcset="">
+                                    Continue with Facebook</button>
+                                <button class="btn social-login apple"><img src="{{ asset('images/Apple.png') }}"
+                                        alt="" srcset=""> Continue with Apple</button>
+                                <p class="container"><img src="{{ asset('images/Google.png') }}" alt=""> <a
+                                        href="{{ url('auth/google') }}" class="btn social-login google">Continue with
                                         Google</a> </p>
-                                    
+
                                 <p class="text-center my-2">Need an Account? <a href="{{ route('register') }}">Sign
                                         Up</a></p>
+                                        <a href="/forgot-password">Forget Password ?!</a>
+
                             </div>
                         </div>
                     </div>
@@ -111,11 +135,15 @@
                             <div class="modal-body2">
                                 <p>Join us and get more benefits. We promise to keep your data safely.</p>
                                 <p class="text-center">or you can</p>
-                                <button class="btn social-login facebook"> <img src="{{asset('images/Facebook.png')}}" alt="" srcset="">   Continue with Facebook</button>
-                                <button class="btn social-login apple"><img src="{{asset('images/Apple.png')}}" alt="" srcset="">   Continue with Apple</button>
-                                <p class="container"><img src="{{asset('images/Google.png')}}" alt=""> <a href="{{ url('auth/google') }}" class="btn social-login google">Continue with
+                                <button class="btn social-login facebook"> <img
+                                        src="{{ asset('images/Facebook.png') }}" alt="" srcset="">
+                                    Continue with Facebook</button>
+                                <button class="btn social-login apple"><img src="{{ asset('images/Apple.png') }}"
+                                        alt="" srcset=""> Continue with Apple</button>
+                                <p class="container"><img src="{{ asset('images/Google.png') }}" alt=""> <a
+                                        href="{{ url('auth/google') }}" class="btn social-login google">Continue with
                                         Google</a> </p>
-                                    
+
 
 
                                 <form method="POST" action="{{ route('register') }}">
@@ -134,8 +162,8 @@
 
                 <div class="nav-right">
                     <a href="#">Become instructor</a>
-                    <a href="/payment">
-                    <img src="{{ asset('images/shop-cart.svg') }}" alt="" srcset="">
+                    <a href="{{ route('checkout') }}">
+                        <img src="{{ asset('images/shop-cart.svg') }}" alt="Checkout">
                     </a>
 
                     @auth
@@ -147,14 +175,16 @@
                                     alt="Profile Image" onclick="toggleDropdown()">
                             </div>
                             <div id="myDropdown" class="dropdown-content">
-                                <a style="margin-left: 0;padding-left:10px" href="{{ route('profile.show') }}">View Profile</a>
+                                <a style="margin-left: 0;padding-left:10px" href="{{ route('profile.show') }}">View
+                                    Profile</a>
                                 @if (Auth::user()->role == 'admin')
                                     <a style="margin-left: 0;padding-left:10px" href="{{ url('/nova') }}">Dashboard</a>
                                 @endif
 
                                 <form method="POST" action="{{ route('logout') }}" style="display: inline;">
                                     @csrf
-                                    <button type="submit" style="background:none;border:none;padding:12px 16px 12px 0px;text-align:left;width:100%;">
+                                    <button type="submit"
+                                        style="background:none;border:none;padding:12px 16px 12px 0px;text-align:left;width:100%;">
                                         Logout
                                     </button>
                                 </form>
@@ -169,6 +199,26 @@
             </div>
         </div>
     </nav>
+    @if (session('success'))
+        <div id="login-success" class="alert alert-success" style="transition: opacity 2s;">
+            {{ session('success') }}
+        </div>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                setTimeout(function() {
+                    var alert = document.getElementById('login-success');
+                    if (alert) {
+                        alert.style.opacity = '0';
+                        setTimeout(function() {
+                            alert.style.display = 'none';
+                        }, 2000);
+                    }
+                }, 5000);
+            });
+        </script>
+    @endif
+
     <!--end nav-->
     <!--start content-->
     <div class="content-all">
@@ -255,19 +305,21 @@
 
 
 
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script>
-    $(document).ready(function() {
-        $('#search').on('keyup', function() {
-            let query = $(this).val();
-            $.ajax({
-                url: "{{ route('search') }}",
-                type: "GET",
-                data: {'query': query},
-                success: function(data) {
-                    $('#course-list').empty(); // تفريغ القائمة الحالية
-                    $.each(data, function(key, course) {
-                        let card = `
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#search').on('keyup', function() {
+                let query = $(this).val();
+                $.ajax({
+                    url: "{{ route('search') }}",
+                    type: "GET",
+                    data: {
+                        'query': query
+                    },
+                    success: function(data) {
+                        $('#course-list').empty(); // تفريغ القائمة الحالية
+                        $.each(data, function(key, course) {
+                            let card = `
                             <div class="cards" data-aos="${(course.id % 2 == 0) ? 'fade-right' : 'fade-left'}" data-aos-easing="ease-in-sine">
                                 <a href="/courses/${course.id}">
                                     <img class="image" src="/storage/${course.image}" alt="Course Image">
@@ -294,13 +346,13 @@
                                 </div>
                             </div>
                         `;
-                        $('#course-list').append(card);
-                    });
-                }
+                            $('#course-list').append(card);
+                        });
+                    }
+                });
             });
         });
-    });
-</script>
+    </script>
 
 
 

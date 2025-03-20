@@ -21,8 +21,8 @@ class ProfileController extends Controller
            
         }
         
-        // Handle case where user is not logged in
-        return redirect('/'); // أو أي رد فعل آخر مناسب
+        
+        return redirect('/'); 
     }
     public function update(Request $request)
     {

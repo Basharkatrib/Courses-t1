@@ -10,40 +10,39 @@ use Stripe\StripeClient;
 
 class StripeController extends Controller
 {
-    public function checkout()
-    {
-        return view('User.index');
-    }
+  public function checkout(Request $request)
+  {
+      Stripe::setApiKey(env('STRIPE_SECRET'));
 
-    public function createCheckoutSession(Request $request)
-    {
-        // تعيين مفتاح API
-        $stripe = new \Stripe\StripeClient('rk_test_51PSkbzE656ExER5LyCcsJNrJGvyOlNMLERr4DieqpN2cXDfY7xyHz1CkNuIlLVXUIH7rVtaUoKEahpshUaubcuN500cLmeGbq1');
-
-        $stripe->checkout->sessions->create([
-          'line_items' => [
-            [
+      $session = Session::create([
+          'payment_method_types' => ['card'],
+          'line_items' => [[
               'price_data' => [
-                'currency' => 'usd',
-                'product_data' => ['name' => 'T-shirt'],
-                'unit_amount' => 2000,
+                  'currency' => 'usd',
+                  'product_data' => [
+                      'name' => 'Course Name',
+                  ],
+                  'unit_amount' => 2000, // السعر هنا بالسنتات (2000 سنت = 20 دولار)
               ],
               'quantity' => 1,
-            ],
-          ],
+          ]],
           'mode' => 'payment',
-          'success_url' => 'http://localhost:4242/success.html',
-          'cancel_url' => 'http://localhost:4242/cancel.html',
-        ]);
-    }
+          'success_url' => route('payment.success'),
+          'cancel_url' => route('payment.cancel'),
+      ]);
 
-    public function success()
-    {
-        return 'Payment successful!';
-    }
+      return redirect($session->url);
+  }
 
-    public function cancel()
-    {
-        return 'Payment canceled!';
-    }
+  public function success()
+  {
+      
+      return view('payment.success');
+  }
+
+  public function cancel()
+  {
+      
+      return view('payment.cancel');
+  }
 }
